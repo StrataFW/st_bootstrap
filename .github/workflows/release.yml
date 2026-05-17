@@ -44,14 +44,8 @@ jobs:
             --exclude='dist' \
             --exclude='*.log' \
             --exclude='web/node_modules' \
-            --exclude='web/src' \
-            --exclude='web/index.html' \
-            --exclude='web/package.json' \
-            --exclude='web/bun.lock' \
-            --exclude='web/tsconfig*.json' \
-            --exclude='web/tsconfig.tsbuildinfo' \
-            --exclude='web/vite.config.ts' \
             --exclude='web/.vite' \
+            --exclude='web/tsconfig.tsbuildinfo' \
             ./ dist/$name/
           cd dist && zip -qr ../$name.zip $name
 
