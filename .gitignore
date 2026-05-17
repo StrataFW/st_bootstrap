@@ -1,0 +1,8 @@
+web/node_modules/
+web/tsconfig.tsbuildinfo
+web/.vite/
+*.log
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

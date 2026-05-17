@@ -1,0 +1,41 @@
+html, body, #root {
+  margin: 0;
+  width: 100vw;
+  height: 100dvh;
+  min-height: 100vh;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: clamp(14px, 0.76vw, 16px);
+  color: #C1C2C5;
+  background: #141517;
+  background-color: #141517;
+  overflow: hidden;
+  user-select: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Loadscreen renders with no cursor — pairs with removing
+     `loadscreen_cursor` from fxmanifest. Kills the busy-wait spinner. */
+  cursor: none !important;
+}
+
+*, *::before, *::after { cursor: inherit; }
+::selection { background: rgba(34, 139, 230, 0.32); color: white; }
+button { font-family: inherit; }
+*:focus { outline: none; }
+
+/* juddlie pattern: bump base font size on ultrawide / 4K, clamp it on
+   1080p-or-below so the layout stays readable across resolutions. */
+@media (min-width: 2200px), (min-height: 1300px) {
+  html, body { font-size: clamp(16px, 0.68vw, 18px); }
+}
+@media (max-width: 1366px), (max-height: 760px) {
+  html, body { font-size: 14px; }
+}
+
+/* Hide all scrollbars — juddlie clean-edge aesthetic. */
+::-webkit-scrollbar { display: none; }
+* { -ms-overflow-style: none; scrollbar-width: none; }
+
+@keyframes st-pulse {
+  0%, 100% { opacity: 0.95; }
+  50%      { opacity: 0.45; }
+}
